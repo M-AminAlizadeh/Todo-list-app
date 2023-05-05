@@ -16,7 +16,7 @@
       class="todo-list-container position-relative border w-50 h-50 rounded">
       <!-- Header -->
       <header
-        class="border border-1 border-warning p-2 d-flex justify-content-between align-items-center">
+        class="border p-2 d-flex justify-content-between align-items-center">
         <h2>Today's To Do List</h2>
         <img
           src="https://img.icons8.com/windows/32/null/refresh.png"
@@ -35,20 +35,12 @@
           class="position-absolute icon" />
       </div>
       <!-- Tasks -->
-      <ul class="tasks-container p-2 border list-unstyled">
-        <li class="task-container d-flex justify-content-between align-items-center">
-          <div class="task-left-side-container">
-            <input type="checkbox" name="" id="" />
-            <span class="task text mx-2">task1</span>
-          </div>
-          <img
-            src="https://img.icons8.com/material-rounded/24/null/menu-2.png"
-            class="icon" />
-        </li>
-      </ul>
+      <ul class="tasks-container p-2 list-unstyled"></ul>
       <!-- Clear btn -->
       <div class="clear-btn-container w-100 position-absolute fixed-bottom">
-        <button class="w-100 py-2 fs-4">Clear all completed</button>
+        <button class="w-100 py-2 fs-5 border border-1 border-secondary">
+          Clear all completed
+        </button>
       </div>
     </main>
   </body>
