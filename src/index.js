@@ -1,20 +1,21 @@
-import _ from 'lodash';
-import printMe from './print.js';
+import { tasksContainer, Tasks } from './Modules/Tasks.js';
 import './style.css';
 
 function component() {
-  const element = document.createElement('div');
-  const btn = document.createElement('button');
+  Tasks.forEach((task) => {
+    tasksContainer.innerHTML += `
+        <li class="task-container my-2 d-flex justify-content-between align-items-center" id="${task.id}">
+          <div class="task-left-side-container">
+            <input type="checkbox" name="${task.task_name}" />
+            <span class="task text mx-2">${task.task_name}</span>
+          </div>
+          <img
+            src="https://img.icons8.com/material-rounded/24/null/menu-2.png"
+            class="icon" />
+        </li>`;
+  });
 
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  btn.innerHTML = 'Click me and check the console!';
-  element.classList.add('hello');
-  btn.onclick = printMe;
-
-  element.appendChild(btn);
-
-  return element;
+  return null;
 }
 
 document.body.appendChild(component());

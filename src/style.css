@@ -1,3 +1,18 @@
-.hello {
-  color: bisque;
+body {
+  height: 100vh;
+}
+
+/* Input */
+.task-input {
+  outline: none;
+  padding: 5px;
+}
+
+.task-input-container img {
+  top: 0;
+  right: 0;
+}
+
+.icon {
+  cursor: pointer;
 }
