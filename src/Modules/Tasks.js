@@ -1,4 +1,4 @@
-const tasks_container = document.querySelector('.tasks-container ');
+const tasksContainer = document.querySelector('.tasks-container ');
 const Tasks = [
   {
     id: 1,
@@ -18,4 +18,4 @@ const Tasks = [
   },
 ];
 
-export { tasks_container, Tasks };
+export { tasksContainer, Tasks };
