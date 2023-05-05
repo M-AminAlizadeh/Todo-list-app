@@ -11,7 +11,7 @@ const Display = (tasks) => {
             <span class="task text mx-2">${task.taskContent}</span>
           </div>
           <img
-            src="https://img.icons8.com/material-rounded/24/null/menu-2.png"
+            src="https://img.icons8.com/pastel-glyph/20/null/trash.png"
             class="icon" />
         </li>`;
   });
