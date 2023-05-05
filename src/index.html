@@ -3,9 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wbpack Exercise</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous" />
+    <title>Todo List</title>
   </head>
-  <body>
-    <h1>Hello webpack!</h1>
+  <body class="d-flex justify-content-center align-items-center">
+    <!-- Todo list container -->
+    <main
+      class="todo-list-container position-relative border w-50 h-50 rounded">
+      <!-- Header -->
+      <header
+        class="border border-1 border-warning p-2 d-flex justify-content-between align-items-center">
+        <h2>Today's To Do List</h2>
+        <img
+          src="https://img.icons8.com/windows/32/null/refresh.png"
+          class="icon" />
+      </header>
+      <!-- Input -->
+      <div
+        class="task-input-container position-relative border p-2 d-flex justify-content-between align-items-center">
+        <input
+          type="text"
+          name="task"
+          class="task-input border-0 w-100"
+          placeholder="Add to your list ..." />
+        <img
+          src="https://img.icons8.com/windows/20/null/import.png"
+          class="position-absolute icon" />
+      </div>
+      <!-- Tasks -->
+      <ul class="tasks-container p-2 border list-unstyled">
+        <li class="task-container d-flex justify-content-between align-items-center">
+          <div class="task-left-side-container">
+            <input type="checkbox" name="" id="" />
+            <span class="task text mx-2">task1</span>
+          </div>
+          <img
+            src="https://img.icons8.com/material-rounded/24/null/menu-2.png"
+            class="icon" />
+        </li>
+      </ul>
+      <!-- Clear btn -->
+      <div class="clear-btn-container w-100 position-absolute fixed-bottom">
+        <button class="w-100 py-2 fs-4">Clear all completed</button>
+      </div>
+    </main>
   </body>
 </html>
