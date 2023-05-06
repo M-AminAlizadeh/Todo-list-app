@@ -1,13 +1,13 @@
-/* eslint-disable */
+/* eslint-disable import/no-mutable-exports */
 const taskInput = document.querySelector('.task-input');
 const addBtn = document.querySelector('.add-btn');
 // Get tasks from localstorage
 let tasks = JSON.parse(localStorage.getItem('Tasks')) || [];
 const Add = (task) => {
   // Random number for Id
-  const randomNum = Math.floor(Math.random() * 1000);
+  // const randomNum = Math.floor(Math.random() * 1000);
   tasks.push({
-    id: randomNum,
+    index: tasks.length,
     taskContent: task,
     completed: false,
   });
@@ -15,8 +15,8 @@ const Add = (task) => {
   localStorage.setItem('Tasks', JSON.stringify(tasks));
 };
 
-const Remove = (id) => {
-  tasks = tasks.filter((task) => Number(task.id) !== Number(id));
+const Remove = (index) => {
+  tasks = tasks.filter((task) => Number(task.index) !== Number(index));
   // Add new tasks list to localstorage
   localStorage.setItem('Tasks', JSON.stringify(tasks));
 };

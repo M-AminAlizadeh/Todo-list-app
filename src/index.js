@@ -40,7 +40,7 @@ document.addEventListener('click', (e) => {
       // Change value
       tasks.forEach((task) => {
         // console.log('test');
-        if (Number(task.id) === Number(e.target.id)) {
+        if (Number(task.index) === Number(e.target.id)) {
           task.taskContent = taskInput.value;
         }
       });
