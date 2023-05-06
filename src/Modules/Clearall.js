@@ -7,7 +7,6 @@ const ClearAll = (tasks) => {
   });
   localStorage.setItem('Tasks', JSON.stringify(tasks));
   Display(tasks);
-  // console.log('second', tasks);
 };
 
 export { ClearAll, ClearAllBtn };

@@ -3,6 +3,7 @@ import { addBtn, taskInput, Add, Remove } from './Modules/Add.js';
 import { Display, tasks } from './Modules/Display.js';
 import Reset from './Modules/Reset.js';
 import { ClearAll, ClearAllBtn } from './Modules/Clearall.js';
+import CheckList from './Modules/Checklist';
 
 // Initial state
 Display(tasks);
@@ -52,19 +53,7 @@ document.addEventListener('click', (e) => {
 
 // Check task
 document.addEventListener('click', (e) => {
-  if (e.target.classList.contains('checkbox')) {
-    tasks.forEach((task) => {
-      if (task.index === Number(e.target.id)) {
-        if (e.target.checked) {
-          task.completed = true;
-        } else {
-          task.completed = false;
-        }
-      }
-    });
-    localStorage.setItem('Tasks', JSON.stringify(tasks));
-    Display(tasks);
-  }
+  CheckList(e)
 });
 
 // Clear all
