@@ -13,6 +13,19 @@ body {
   right: 0;
 }
 
+.task {
+  outline: none;
+}
+
 .icon {
   cursor: pointer;
+}
+
+.tasks-container {
+  overflow-y: scroll;
+}
+
+.clear-btn-container {
+  position: absolute;
+  bottom: 0;
 }

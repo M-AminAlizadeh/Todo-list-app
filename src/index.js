@@ -1,21 +1,51 @@
-import { tasksContainer, Tasks } from './Modules/Tasks.js';
 import './style.css';
+import {
+  addBtn, taskInput, Add, Remove,
+} from './Modules/Add.js';
+import { Display, tasks } from './Modules/Display.js';
+import Reset from './Modules/Reset.js';
 
-function component() {
-  Tasks.forEach((task) => {
-    tasksContainer.innerHTML += `
-        <li class="task-container my-2 d-flex justify-content-between align-items-center" id="${task.id}">
-          <div class="task-left-side-container">
-            <input type="checkbox" name="${task.task_name}" />
-            <span class="task text mx-2">${task.task_name}</span>
-          </div>
-          <img
-            src="https://img.icons8.com/material-rounded/24/null/menu-2.png"
-            class="icon" />
-        </li>`;
-  });
+// Initial state
+Display(tasks);
 
-  return null;
-}
+// Add task
+addBtn.addEventListener('click', () => {
+  if (taskInput.value) {
+    Add(taskInput.value);
+    Display(tasks);
+    Reset();
+  }
+});
 
-document.body.appendChild(component());
+// Remove task
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('trash-icon')) {
+    Remove(e.target.id);
+    Display(tasks);
+  }
+});
+
+// Edit task
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('edit-btn')) {
+    const taskInput = e.target.parentElement.parentElement.firstElementChild.lastElementChild;
+    if (e.target.innerText.toLowerCase() === 'edit') {
+      e.target.innerText = 'Save';
+      taskInput.removeAttribute('readonly');
+      taskInput.classList.remove('border-0');
+    } else {
+      e.target.innerText = 'Edit';
+      taskInput.setAttribute('readonly', 'readonly');
+      taskInput.classList.add('border-0');
+      // Change value
+      tasks.forEach((task) => {
+        // console.log('test');
+        if (Number(task.index) === Number(e.target.id)) {
+          task.taskContent = taskInput.value;
+        }
+      });
+      // Set to localstorage
+      localStorage.setItem('Tasks', JSON.stringify(tasks));
+    }
+  }
+});
