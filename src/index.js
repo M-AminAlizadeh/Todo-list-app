@@ -2,6 +2,7 @@ import './style.css';
 import { addBtn, taskInput, Add, Remove } from './Modules/Add.js';
 import { Display, tasks } from './Modules/Display.js';
 import Reset from './Modules/Reset.js';
+import { ClearAll, ClearAllBtn } from './Modules/Clearall.js';
 
 // Initial state
 Display(tasks);
@@ -64,4 +65,10 @@ document.addEventListener('click', (e) => {
     localStorage.setItem('Tasks', JSON.stringify(tasks));
     Display(tasks);
   }
+});
+
+// Clear all
+ClearAllBtn.addEventListener('click', () => {
+  ClearAll(tasks);
+  // Display(tasks);
 });
