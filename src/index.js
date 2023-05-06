@@ -1,7 +1,5 @@
 import './style.css';
-import {
-  addBtn, taskInput, Add, Remove,
-} from './Modules/Add.js';
+import { addBtn, taskInput, Add, Remove } from './Modules/Add.js';
 import { Display, tasks } from './Modules/Display.js';
 import Reset from './Modules/Reset.js';
 
@@ -28,7 +26,8 @@ document.addEventListener('click', (e) => {
 // Edit task
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('edit-btn')) {
-    const taskInput = e.target.parentElement.parentElement.firstElementChild.lastElementChild;
+    const taskInput =
+      e.target.parentElement.parentElement.firstElementChild.lastElementChild;
     if (e.target.innerText.toLowerCase() === 'edit') {
       e.target.innerText = 'Save';
       taskInput.removeAttribute('readonly');
@@ -47,5 +46,22 @@ document.addEventListener('click', (e) => {
       // Set to localstorage
       localStorage.setItem('Tasks', JSON.stringify(tasks));
     }
+  }
+});
+
+// Check task
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('checkbox')) {
+    tasks.forEach((task) => {
+      if (task.index === Number(e.target.id)) {
+        if (e.target.checked) {
+          task.completed = true;
+        } else {
+          task.completed = false;
+        }
+      }
+    });
+    localStorage.setItem('Tasks', JSON.stringify(tasks));
+    Display(tasks);
   }
 });
