@@ -8,11 +8,14 @@ const Display = (tasks) => {
         <li class="task-container my-2 d-flex justify-content-between align-items-center" id="${task.id}">
           <div class="task-left-side-container">
             <input type="checkbox" name="${task.taskContent}" />
-            <span class="task text mx-2">${task.taskContent}</span>
+            <input type="text" class="task text mx-2 border-0" value="${task.taskContent}" readonly/>
           </div>
+          <div class="task-right-side-container">
+          <button class="edit-btn" id="${task.id}">Edit</button>
           <img
             src="https://img.icons8.com/pastel-glyph/20/null/trash.png"
             class="icon trash-icon" id="${task.id}"/>
+          </div>
         </li>`;
   });
   return (tasksContainer.innerHTML = content);

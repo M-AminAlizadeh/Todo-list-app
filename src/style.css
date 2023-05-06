@@ -13,6 +13,10 @@ body {
   right: 0;
 }
 
+.task {
+  outline: none;
+}
+
 .icon {
   cursor: pointer;
 }
