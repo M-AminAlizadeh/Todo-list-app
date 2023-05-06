@@ -4,6 +4,8 @@ import {
 } from './Modules/Add.js';
 import { Display, tasks } from './Modules/Display.js';
 import Reset from './Modules/Reset.js';
+import { ClearAll, ClearAllBtn } from './Modules/Clearall.js';
+import CheckList from './Modules/Checklist.js';
 
 // Initial state
 Display(tasks);
@@ -48,4 +50,15 @@ document.addEventListener('click', (e) => {
       localStorage.setItem('Tasks', JSON.stringify(tasks));
     }
   }
+});
+
+// Check task
+document.addEventListener('click', (e) => {
+  CheckList(e);
+});
+
+// Clear all
+ClearAllBtn.addEventListener('click', () => {
+  ClearAll(tasks);
+  // Display(tasks);
 });

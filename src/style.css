@@ -29,3 +29,7 @@ body {
   position: absolute;
   bottom: 0;
 }
+
+.delete {
+  text-decoration: line-through;
+}
