@@ -65,7 +65,7 @@ to the localstorage.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://m-aminalizadeh.github.io/Microverse-todo-list/)
+- [Live Demo Link](  https://m-aminalizadeh.github.io/Microverse-todo-list/dist/index.html)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
