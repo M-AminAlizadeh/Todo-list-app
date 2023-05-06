@@ -7,15 +7,15 @@ const Display = (tasks) => {
   tasks.forEach((task) => {
     content += `
         <li class="task-container my-2 d-flex justify-content-between align-items-center" id="${
-          task.index
-        }">
+  task.index
+}">
           <div class="task-left-side-container">
             <input type="checkbox" name="${task.taskContent}" id="${
-      task.index
-    }" class="checkbox" ${task.completed ? 'checked' : null}/>
+  task.index
+}" class="checkbox" ${task.completed ? 'checked' : null}/>
             <input type="text" class="task text mx-2 border-0  ${
-              task.completed ? 'delete' : null
-            }" value="${task.taskContent}" readonly />
+  task.completed ? 'delete' : null
+}" value="${task.taskContent}" readonly />
           </div>
           <div class="task-right-side-container">
           <button class="edit-btn" id="${task.index}">Edit</button>
