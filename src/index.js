@@ -1,7 +1,9 @@
 import './style.css';
-import { addBtn, taskInput, Add, Remove } from './Modules/Add.js';
+import {
+  addBtn, taskInput, Add, Remove,
+} from './Modules/Add.js';
 import { Display, tasks } from './Modules/Display.js';
-import { Reset } from './Modules/Reset.js';
+import Reset from './Modules/Reset.js';
 
 // Initial state
 Display(tasks);
@@ -26,8 +28,7 @@ document.addEventListener('click', (e) => {
 // Edit task
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('edit-btn')) {
-    const taskInput =
-      e.target.parentElement.parentElement.firstElementChild.lastElementChild;
+    const taskInput = e.target.parentElement.parentElement.firstElementChild.lastElementChild;
     if (e.target.innerText.toLowerCase() === 'edit') {
       e.target.innerText = 'Save';
       taskInput.removeAttribute('readonly');

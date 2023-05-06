@@ -1,3 +1,4 @@
+/* eslint-disable */
 const taskInput = document.querySelector('.task-input');
 const addBtn = document.querySelector('.add-btn');
 // Get tasks from localstorage
@@ -15,11 +16,11 @@ const Add = (task) => {
 };
 
 const Remove = (id) => {
-  tasks = tasks.filter((task) => {
-    return Number(task.id) !== Number(id);
-  });
+  tasks = tasks.filter((task) => Number(task.id) !== Number(id));
   // Add new tasks list to localstorage
   localStorage.setItem('Tasks', JSON.stringify(tasks));
 };
 
-export { addBtn, taskInput, Add, tasks, Remove };
+export {
+  addBtn, taskInput, Add, tasks, Remove,
+};

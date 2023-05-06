@@ -4,4 +4,4 @@ const Reset = () => {
   taskInput.value = '';
 };
 
-export {Reset};
+export default Reset;

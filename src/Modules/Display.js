@@ -1,4 +1,5 @@
 import { tasks } from './Add.js';
+
 const tasksContainer = document.querySelector('.tasks-container');
 
 const Display = (tasks) => {
@@ -18,7 +19,7 @@ const Display = (tasks) => {
           </div>
         </li>`;
   });
-  return (tasksContainer.innerHTML = content);
+  tasksContainer.innerHTML = content;
 };
 
 export { Display, tasks };
