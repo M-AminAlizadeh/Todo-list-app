@@ -12,7 +12,7 @@ const Display = (tasks) => {
           </div>
           <img
             src="https://img.icons8.com/pastel-glyph/20/null/trash.png"
-            class="icon" />
+            class="icon trash-icon" id="${task.id}"/>
         </li>`;
   });
   return (tasksContainer.innerHTML = content);
