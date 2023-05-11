@@ -1,4 +1,4 @@
-const add = require('./crud.js').default;
+const {Add,Remove} = require('./Add.js');
 
 describe('Add/Delete items from to-do list', () => {
   describe('Add/Delete Tasks', () => {
@@ -10,9 +10,9 @@ describe('Add/Delete items from to-do list', () => {
       <input id="create-task" type="text">
       <a href="#" id="clearCompleted"></a>
       `;
-      add('Test', 1, false);
-      add('Second Test', 2, false);
-      add('third Test', 3, false);
+      Add('Test', 1, false);
+      Add('Second Test', 2, false);
+      Add('third Test', 3, false);
       const list = document.querySelectorAll('.list-item');
       expect(list).toHaveLength(3);
     });
@@ -24,8 +24,8 @@ describe('Add/Delete items from to-do list', () => {
       <input id="create-task" type="text">
       <a href="#" id="clearCompleted"></a>
       `;
-      add('Test', 1, false);
-      add('Second Test', 2, false);
+      Remove('Test', 1, false);
+      Remove('Second Test', 2, false);
       add('third Test', 3, false);
       document.querySelector('.del-btn').click();
       const list = document.querySelectorAll('.list-item');
