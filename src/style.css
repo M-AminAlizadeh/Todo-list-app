@@ -4,11 +4,10 @@ body {
 }
 
 /* Main */
-main{
+main {
   /* max-height: 300px; */
   min-width: 300px;
 }
-
 
 /* Input */
 .task-input {
@@ -33,7 +32,7 @@ main{
 
 .tasks-container {
   /* border:1px solid red; */
-  height:200px;
+  height: 200px;
   overflow-y: scroll;
 }
 
