@@ -1,6 +1,14 @@
+/* Body */
 body {
   height: 100vh;
 }
+
+/* Main */
+main{
+  /* max-height: 300px; */
+  min-width: 300px;
+}
+
 
 /* Input */
 .task-input {
@@ -22,12 +30,9 @@ body {
 }
 
 .tasks-container {
+  /* border:1px solid red; */
+  height:200px;
   overflow-y: scroll;
-}
-
-.clear-btn-container {
-  position: absolute;
-  bottom: 0;
 }
 
 .delete {
