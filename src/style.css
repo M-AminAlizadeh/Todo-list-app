@@ -23,6 +23,8 @@ main{
 
 .task {
   outline: none;
+  font-size: 20px;
+  font-family: monospace;
 }
 
 .icon {
